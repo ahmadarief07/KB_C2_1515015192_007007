@@ -1,0 +1,28 @@
+/*****************************************************************************
+
+		Copyright (c) 1984 - 2000 Prolog Development Center A/S
+
+ Project:  
+ FileName: CH03E02.PRO
+ Purpose: 
+ Written by: PDC
+ Modifyed by: Eugene Akimov
+ Comments: 
+******************************************************************************/
+
+domains %menyatakan jenis suatu variabel
+  brand,color = symbol %menyatakan brand & warna adalah simbol
+  age = byte %menyatakan umur dengan tipe dasar byte yang panjangnya 8 bit
+  price, mileage = ulong %harga & jarak tempuh dinyatakan dalam long
+
+predicates
+  car(brand,mileage,age,color,price) - nondeterm (i,i,i,i,i) %nondeterm (i,i,i,i,i) -> memberi tahu compiler bahwa predikat tsb mempunyai 5 input.  
+
+clauses
+  car(chrysler,130000,3,red,12000).
+  car(ford,90000,4,gray,25000).
+  car(datsun,8000,1,black,30000).
+
+goal
+  car(renault,13,40000,red,12000). %goal tidak terpenuhi atau error karena mobil dengan brand renault tidak ada dalam klausa.
+	  

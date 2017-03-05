@@ -1,0 +1,28 @@
+/*****************************************************************************
+
+		Copyright (c) 1984 - 2000 Prolog Development Center A/S
+
+ Project:  
+ FileName: CH02E03.PRO
+ Purpose: 
+ Written by: PDC
+ Modifyed by: Eugene Akimov
+ Comments: 
+******************************************************************************/
+%simbol          -> tidak perlu petik 2("") diawal kata,
+%nondeterm (i,i) -> memberi tahu compiler bahwa predikat tsb mempunyai input lebih dari satu.
+%nondeterm (o,i) -> memberi tahu compiler bahwa predikat tsb mempunyai input satu dan output satu.
+predicates
+  likes(symbol,symbol) - nondeterm (o,i), nondeterm (i,i)
+
+clauses
+  likes(ellen,reading). %ellen suka membaca 
+  likes(john,computers). %john suka komputer
+  likes(john,badminton). %john suka badminton
+  likes(leonard,badminton). %leonard suka badminton
+  likes(eric,swimming). %eric suka renang
+  likes(eric,reading). %eric suka membaca
+
+goal
+  likes(Person,reading), %siapa orang yang suka membaca dan renang
+  likes(Person,swimming). %jawabannya eric

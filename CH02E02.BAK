@@ -1,0 +1,51 @@
+/*****************************************************************************
+
+		Copyright (c) 1984 - 2000 Prolog Development Center A/S
+
+ Project:  
+ FileName: CH02E02.PRO
+ Purpose: 
+ Written by: PDC
+ Modifyed by: Eugene Akimov
+ Comments: 
+******************************************************************************/
+
+ %simbol          -> tidak perlu petik 2("") diawal kata,
+ %nondeterm (o,o) -> memberi tahu compiler bahwa predikat tsb mempunyai kemungkinan jawaban lebih dari satu.
+ %nondeterm (o)   -> memberi tahu compiler bahwa predikat tsb mempunyai kemungkinan hanya satu jawaban.
+ %nondeterm (i)   -> memberi tahu compiler bahwa predikat tsb mempunyai input hanya satu.
+ %nondeterm (i,i) -> memberi tahu compiler bahwa predikat tsb mempunyai input lebih dari satu satu.
+predicates
+  can_buy(symbol,symbol) - nondeterm (o,o)
+  person(symbol) - nondeterm (o)
+  car(symbol) - nondeterm (o)
+  likes(symbol,symbol) - nondeterm (i,i)
+  for_sale(symbol) - nondeterm (i)
+
+clauses
+  can_buy(X,Y):- %barang yang dapat dibeli (X,Y) atau
+	person(X), %orang disebut X
+	car(Y), %mobil disebut Y
+	likes(X,Y), %orang suka mobil
+   	for_sale(Y). %yang dijual adalah Y(mobil)
+
+  person(kelly). %orang ke-1 kelly
+  person(judy). %orang ke-2 judy
+  person(ellen).%orang ke-3 ellen
+  person(mark). %orang ke-4 mark
+
+  car(lemon). %merek mobil lemon
+  car(hot_rod). %merek mobil hot rod
+
+  likes(kelly, hot_rod). %kelly suka hot rod
+  likes(judy, pizza). %judy suka pizza
+  likes(ellen, tennis). %ellen suka tenis
+  likes(mark, tennis). %mark suka tenis
+
+  for_sale(pizza). %yang dijual pizza
+  for_sale(lemon). %yang dijual lemon
+  for_sale(hot_rod). %yang dijual hot rod
+
+goal
+  can_buy(Who,What). %yang dapat dibeli (Siapa? , Apa?)
+  %dilihat dari klausanya yang membeli adalah Kelly yang membeli mobil hot rod
