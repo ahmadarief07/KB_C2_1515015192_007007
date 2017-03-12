@@ -1,0 +1,31 @@
+1)a. dian adalah orang
+ b. atoz adalah mobil
+ c. dian suka mobil atoz
+ d. dijual mobil atoz
+ e. dapat membeli (X,Y) jika
+	orang adalah X dan
+	mobil adalah Y dan
+	orang menyukai mobil dan
+	mobil dijual.
+ f. suka(_,Apa). ->> underscore menyatakan orang yaitu bernilai X
+    Sedangkan "Apa" menyatakan Y yaitu mobil.
+
+
+2)a. hobi("ricky","catur").
+ b. orang("embang","pemalas").
+ c. vegetarian("yusida").
+ d. pandai("kusdiar","gitar").
+ e. merah ("mobil","Sadek), merk("BMW").
+ f. pemain ("awan","piano"), asal("awan","pontianak"),suku("jawa").
+ g. baik ("orang"):- sifat("punya","penyayang"), sifat("dermawan").
+ h. pintar ("orang"):- dapat("matematika","tinggi");dapat    ("ipa","tinggi");dapat("ips","tinggi").
+ i. pasti("orang","mati.")
+
+3)Macam-macam keyword dalam prolog
+ a. Prolog -> Programming in LOgic yaitu pemograman berbasis logika
+ b. Domain baku pada prolog: 
+    -> char karakter tunggal yang diapit oleh tanda kutip tunggal: ‘a’.
+    -> integer bilangan bulat antara –32768 hingga 32767.
+    -> real bilangan nyata antara 1x10 –307 hingga 1 x 10 308.
+    -> String deretan karakter yang diapit oleh tanda kutip dobel, misalnya        “ipb”.
+    -> Symbol, rangkaian karakter yang diawali dengan huruf kecil da tanpa tanda        apa pun.
